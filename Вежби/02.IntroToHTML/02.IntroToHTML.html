@@ -1,0 +1,1167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-03-15 Fri 09:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intro to HTML</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Boban Joksimoski" />
+<meta name="description" content="Intro to HTML"
+ />
+<meta name="keywords" content="html, html5" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./lib/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="./lib/readtheorg.css"/>
+<script src="./lib/jquery.min.jsm"></script>
+<script src="./lib/bootstrap.min.js"></script>
+<script type="text/javascript" src="./lib/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="./lib/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Intro to HTML</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org72f5e98">1. Getting to Know HTML</a></li>
+<li><a href="#orgbaaab3e">2. Semantics Overview</a></li>
+<li><a href="#org6d2657a">3. Identifying Divisions &amp; Spans</a>
+<ul>
+<li><a href="#orgb236dd1">3.1. Block vs. Inline Elements</a></li>
+<li><a href="#org0523eae">3.2. Div or span</a></li>
+<li><a href="#org24cac33">3.3. Comments within HTML &amp; CSS</a></li>
+</ul>
+</li>
+<li><a href="#org207cb40">4. Using Text-Based Elements</a>
+<ul>
+<li><a href="#orga71cda1">4.1. Headings</a></li>
+<li><a href="#org090152f">4.2. Paragraphs</a>
+<ul>
+<li><a href="#org6e4ca13">4.2.1. Paragraphs Demo</a></li>
+</ul>
+</li>
+<li><a href="#orgb04c9dc">4.3. Bold Text with Strong</a>
+<ul>
+<li><a href="#orgb025db2">4.3.1. Bold Text with Strong Demo</a></li>
+</ul>
+</li>
+<li><a href="#orga534778">4.4. Italicize Text with Emphasis</a>
+<ul>
+<li><a href="#org7a94347">4.4.1. Italicize Text with Emphasis Demo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3890072">5. Building Structure</a></li>
+<li><a href="#orgc085cad">6. Header</a>
+<ul>
+<li><a href="#org363669a">6.1. &lt;header&gt; vs. &lt;head&gt; vs. &lt;h1&gt; through &lt;h6&gt; Elements</a></li>
+</ul>
+</li>
+<li><a href="#org9b4ca28">7. Navigation</a></li>
+<li><a href="#org636a1bf">8. Article</a></li>
+<li><a href="#org6230377">9. Section</a></li>
+<li><a href="#orgad36436">10. Deciding Between &lt;article&gt;, &lt;section&gt;, or &lt;div&gt; Elements</a></li>
+<li><a href="#org915c013">11. Aside</a></li>
+<li><a href="#orga678d36">12. Footer</a></li>
+<li><a href="#orged54d92">13. In Practice</a></li>
+<li><a href="#orge0148af">14. Encoding Special Characters</a></li>
+<li><a href="#org3bf1205">15. Creating Hyperlinks</a>
+<ul>
+<li><a href="#org09697e1">15.1. Wrapping Block-Level Elements with Anchors</a></li>
+<li><a href="#org1f49a1a">15.2. Relative &amp; Absolute Paths</a></li>
+<li><a href="#org4bc06db">15.3. Linking to an Email Address</a></li>
+<li><a href="#orgb3b6819">15.4. Opening Links in a New Window</a></li>
+<li><a href="#org6cdf8e6">15.5. Linking to Parts of the Same Page</a></li>
+</ul>
+</li>
+<li><a href="#org8274ed7">16. In Practice</a></li>
+<li><a href="#orgba7f667">17. Summary</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org72f5e98" class="outline-2">
+<h2 id="org72f5e98"><span class="section-number-2">1</span> Getting to Know HTML</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+With our introduction to HTML and CSS complete, it's time to dig a little deeper into HTML and examine the different components that make up this language.
+</p>
+
+<p>
+In order to start building websites, we need to learn a little about which HTML elements are best used to display different types of content. It's also important to understand how elements are visually displayed on a web page, as well as what different elements mean semantically.
+</p>
+
+<p>
+Using the proper element for the job goes a long way, and we'll want to make well-informed decisions in the process.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbaaab3e" class="outline-2">
+<h2 id="orgbaaab3e"><span class="section-number-2">2</span> Semantics Overview</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+So what exactly are semantics? <a href="http://boagworld.com/dev/semantic-code-what-why-how/">Semantics within HTML</a> is the practice of giving content on the page meaning and structure by using the proper element. Semantic code describes the value of content on a page, regardless of the style or appearance of that content. There are several benefits to using semantic elements, including enabling computers, screen readers, search engines, and other devices to adequately read and understand the content on a web page. Additionally, semantic HTML is easier to manage and work with, as it shows clearly what each piece of content is about.
+</p>
+
+<p>
+Moving forward, as new elements are introduced, we'll talk about what those elements actually mean and the type of content they best represent. Before we do that, though, let's look at two elements <code>&lt;div&gt;</code>  and <code>&lt;span&gt;</code> that actually don't hold any semantic value. They exist for styling purposes only.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6d2657a" class="outline-2">
+<h2 id="org6d2657a"><span class="section-number-2">3</span> Identifying Divisions &amp; Spans</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Divisions, or <code>&lt;div&gt;</code>, and <code>&lt;span&gt;</code> are HTML elements that act as containers solely for styling purposes. As generic containers, they do not come with any overarching meaning or semantic value. Paragraphs are semantic in that content wrapped within a <code>&lt;p&gt;</code> element is known and understood as a paragraph. <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> do not hold any such meaning and are simply containers.
+</p>
+</div>
+
+<div id="outline-container-orgb236dd1" class="outline-3">
+<h3 id="orgb236dd1"><span class="section-number-3">3.1</span> Block vs. Inline Elements</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Most elements are either block- or inline-level elements. What's the difference?
+</p>
+
+<p>
+Block-level elements begin on a new line, stacking one on top of the other, and occupy any available width. Block-level elements may be nested inside one another and may wrap inline-level elements. We'll most commonly see block-level elements used for larger pieces of content, such as paragraphs.
+</p>
+
+<p>
+Inline-level elements do not begin on a new line. They fall into the normal flow of a document, lining up one after the other, and only maintain the width of their content. Inline-level elements may be nested inside one another; however, they cannot wrap block-level elements. We'll usually see inline-level elements with smaller pieces of content, such as a few words.
+<img src="./img/block-inline.jpg" alt="block-inline.jpg" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0523eae" class="outline-3">
+<h3 id="org0523eae"><span class="section-number-3">3.2</span> Div or span</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Both <code>&lt;div&gt;</code>  and <code>&lt;span&gt;</code>, however, are extremely valuable when building a website in that they give us the ability to apply targeted styles to a contained set of content.
+</p>
+
+<p>
+A <code>&lt;div&gt;</code> is a block-level element that is commonly used to identify large groupings of content, and which helps to build a web page’s layout and design. A <code>&lt;span&gt;</code>, on the other hand, is an inline-level element commonly used to identify smaller groupings of text within a block-level element.
+</p>
+
+<p>
+We’ll commonly see <code>&lt;div&gt;</code>  and <code>&lt;span&gt;</code>  with class or id attributes for styling purposes. Choosing a class or id attribute value, or name, requires a bit of care. We want to choose a value that refers to the content of an element, not necessarily the appearance of an element.
+</p>
+
+<p>
+For example, if we have a <code>&lt;div&gt;</code> with an orange background that contains social media links, our first thought might be to give the <code>&lt;div&gt;</code> a class value of orange. What happens if that orange background is later changed to blue? Having a class value of orange no longer makes sense. A more sensible choice for a class value would be social, as it pertains to the contents of the <code>&lt;div&gt;</code>, not the style.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="org24ca42c"><span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Division </span><span style="color: #75715E;">--&gt;</span>
+&lt;<span style="color: #A6E22E;">div</span> <span style="color: #FD971F;">class</span>=<span style="color: #E6DB74;">"social"</span>&gt;
+  &lt;<span style="color: #A6E22E;">p</span>&gt;I may be found on...&lt;/<span style="color: #A6E22E;">p</span>&gt;
+  &lt;<span style="color: #A6E22E;">p</span>&gt;Additionally, I have a profile on...&lt;/<span style="color: #A6E22E;">p</span>&gt;
+&lt;/<span style="color: #A6E22E;">div</span>&gt;
+
+<span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Span </span><span style="color: #75715E;">--&gt;</span>
+&lt;<span style="color: #A6E22E;">p</span>&gt;Soon we'll be &lt;<span style="color: #A6E22E;">span</span> <span style="color: #FD971F;">class</span>=<span style="color: #E6DB74;">"tooltip"</span>&gt;writing HTML&lt;/<span style="color: #A6E22E;">span</span>&gt; with the best of them.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org24cac33" class="outline-3">
+<h3 id="org24cac33"><span class="section-number-3">3.3</span> Comments within HTML &amp; CSS</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+The previous code includes exclamation points within the HTML, and that's all right. Those are not elements, those are comments.
+</p>
+
+<p>
+HTML and CSS give us the ability to leave comments within our code, and any content wrapped within a comment will not be displayed on the web page. Comments help keep our files organized, allow us to set reminders, and provide a way for us to more effectively manage our code. Comments become especially useful when there are multiple people working on the same files.
+</p>
+
+<p>
+HTML comments start with <code>&lt;!--</code> and end with <code>--&gt;</code>. CSS comments start with <code>/*</code> and end with <code>*/</code>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org207cb40" class="outline-2">
+<h2 id="org207cb40"><span class="section-number-2">4</span> Using Text-Based Elements</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Many different forms of media and content exist online; however, text is predominant. Accordingly, there are a number of different elements for displaying text on a web page. For now we'll focus on the more popular elements, including headings, paragraphs, bold text to show importance, and italics for emphasis. Later, we'll take a closer look at how to style text.
+</p>
+</div>
+
+<div id="outline-container-orga71cda1" class="outline-3">
+<h3 id="orga71cda1"><span class="section-number-3">4.1</span> Headings</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Headings are block-level elements, and they come in six different rankings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>. Headings help to quickly break up content and establish hierarchy, and they are key identifiers for users reading a page. They also help search engines to index and determine the content on a page.
+</p>
+
+<p>
+Headings should be used in an order that is relevant to the content of a page. The primary heading of a page or section should be marked up with an <code>&lt;h1&gt;</code> element, and subsequent headings should use <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, and <code>&lt;h6&gt;</code> elements as necessary.
+</p>
+
+<p>
+Each heading level should be used where it is semantically valued, and should not be used to make text bold or big, there are other, better ways to do that.
+</p>
+
+<p>
+Here is an example of HTML for all the different heading levels and the resulting display on a web page.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orga656386">&lt;<span style="color: #A6E22E;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Heading Level 1</span>&lt;/<span style="color: #A6E22E;">h1</span>&gt;
+&lt;<span style="color: #A6E22E;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Heading Level 2</span>&lt;/<span style="color: #A6E22E;">h2</span>&gt;
+&lt;<span style="color: #A6E22E;">h3</span>&gt;<span style="color: #222222; font-style: italic; text-decoration: underline;">Heading Level 3</span>&lt;/<span style="color: #A6E22E;">h3</span>&gt;
+&lt;<span style="color: #A6E22E;">h4</span>&gt;<span style="text-decoration: underline;">Heading Level 4</span>&lt;/<span style="color: #A6E22E;">h4</span>&gt;
+&lt;<span style="color: #A6E22E;">h5</span>&gt;<span style="text-decoration: underline;">Heading Level 5</span>&lt;/<span style="color: #A6E22E;">h5</span>&gt;
+&lt;<span style="color: #A6E22E;">h6</span>&gt;<span style="text-decoration: underline;">Heading Level 6</span>&lt;/<span style="color: #A6E22E;">h6</span>&gt;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orgbc7031c">body, h6 { margin: 0;}
+h1 { margin-top: 0;}
+</pre>
+</div>
+
+<p>
+Result:
+</p>
+
+<div class="figure">
+<p><img src="./img/headers.png" alt="headers.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Headings demo</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org090152f" class="outline-3">
+<h3 id="org090152f"><span class="section-number-3">4.2</span> Paragraphs</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Headings are often followed by supporting paragraphs. Paragraphs are defined using the <code>&lt;p&gt;</code> block-level element. Paragraphs can appear one after the other, adding information to a page as desired. Here is example of how to set up paragraphs.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orge0dc910">&lt;<span style="color: #A6E22E;">p</span>&gt;Steve Jobs was a co-founder and longtime chief executive officer at Apple. On June 12, 2005, Steve gave the commencement address at Stanford University.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+
+&lt;<span style="color: #A6E22E;">p</span>&gt;In his address Steve urged graduates to follow their dreams and, despite any setbacks, to never give up<span style="color: #FD971F;">&amp;ndash;</span>advice which he sincerely took to heart.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6e4ca13" class="outline-4">
+<h4 id="org6e4ca13"><span class="section-number-4">4.2.1</span> Paragraphs Demo</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<div class="org-src-container">
+<pre class="src src-html" id="org59ca505">&lt;<span style="color: #A6E22E;">p</span>&gt;Steve Jobs was a co-founder and longtime chief executive officer at Apple. On June 12, 2005, Steve gave the commencement address at Stanford University.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+&lt;<span style="color: #A6E22E;">p</span>&gt;In his address Steve urged graduates to follow their dreams and, despite any setbacks, to never give up<span style="color: #FD971F;">&amp;ndash;</span>advice which he sincerely took to heart.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-css" id="orgd552a2f"><span style="color: #A6E22E;">body </span>{  <span style="color: #F92672;">margin</span>: 0;}p:first-of-type {  <span style="color: #F92672;">margin-top</span>: 0;}p:last-of-type {  <span style="color: #F92672;">margin-bottom</span>: 0;}
+</pre>
+</div>
+
+<p>
+Result:
+</p>
+
+<div class="figure">
+<p><img src="./img/paragraphs.png" alt="paragraphs.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Paragraphs demo</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb04c9dc" class="outline-3">
+<h3 id="orgb04c9dc"><span class="section-number-3">4.3</span> Bold Text with Strong</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+To make text bold and place a strong importance on it, we'll use the <code>&lt;strong&gt;</code> inline-level element. There are two elements that will bold text for us: the <code>&lt;strong&gt;</code> and <code>&lt;b&gt;</code> elements. It is important to understand the <a href="http://html5doctor.com/i-b-em-strong-element/">semantic difference</a> between the two.
+</p>
+
+<p>
+The <code>&lt;strong&gt;</code> element is semantically used to give strong importance to text, and is thus the most popular option for bolding text. The <code>&lt;b&gt;</code> element, on the other hand, semantically means to <i>stylistically offset</i> text, which isn't always the best choice for text deserving prominent attention. We have to gauge the significance of the text we wish to set as bold and to choose an element accordingly.
+</p>
+
+<p>
+Here are the two HTML options for creating bold text in action:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="org8363156"><span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Strong importance </span><span style="color: #75715E;">--&gt;</span>
+&lt;<span style="color: #A6E22E;">p</span>&gt;&lt;<span style="color: #A6E22E;">strong</span>&gt;<span style="font-weight: bold;">Caution:</span>&lt;/<span style="color: #A6E22E;">strong</span>&gt; Falling rocks.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+
+<span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Stylistically offset </span><span style="color: #75715E;">--&gt;</span>
+&lt;<span style="color: #A6E22E;">p</span>&gt;This recipe calls for &lt;<span style="color: #A6E22E;">b</span>&gt;<span style="font-weight: bold;">bacon</span>&lt;/<span style="color: #A6E22E;">b</span>&gt; and &lt;<span style="color: #A6E22E;">b</span>&gt;<span style="font-weight: bold;">baconnaise</span>&lt;/<span style="color: #A6E22E;">b</span>&gt;.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-orgb025db2" class="outline-4">
+<h4 id="orgb025db2"><span class="section-number-4">4.3.1</span> Bold Text with Strong Demo</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<div class="org-src-container">
+<pre class="src src-html" id="org5b60c3d"><span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Strong importance </span><span style="color: #75715E;">--&gt;</span>&lt;<span style="color: #A6E22E;">p</span>&gt;&lt;<span style="color: #A6E22E;">strong</span>&gt;<span style="font-weight: bold;">Caution:</span>&lt;/<span style="color: #A6E22E;">strong</span>&gt; Falling rocks.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+<span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Stylistically offset </span><span style="color: #75715E;">--&gt;</span>&lt;<span style="color: #A6E22E;">p</span>&gt;This recipe calls for &lt;<span style="color: #A6E22E;">b</span>&gt;<span style="font-weight: bold;">bacon</span>&lt;/<span style="color: #A6E22E;">b</span>&gt; and &lt;<span style="color: #A6E22E;">b</span>&gt;<span style="font-weight: bold;">baconnaise</span>&lt;/<span style="color: #A6E22E;">b</span>&gt;.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-html" id="org0a8d001">body {  margin: 0;}p:first-of-type {  margin-top: 0;}p:last-of-type {  margin-bottom: 0;}
+</pre>
+</div>
+
+<p>
+Result:
+</p>
+
+<div class="figure">
+<p><img src="./img/bold.png" alt="bold.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Bold text demo</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga534778" class="outline-3">
+<h3 id="orga534778"><span class="section-number-3">4.4</span> Italicize Text with Emphasis</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+To italicize text, thereby placing emphasis on it, we'll use the <code>&lt;em&gt;</code> inline-level element. As with the elements for bold text, there are two different elements that will italicize text, each with a slightly different semantic meaning.
+</p>
+
+<p>
+The <code>&lt;em&gt;</code> element is used semantically to place a stressed emphasis on text; it is thus the most popular option for italicizing text. The other option, the <code>&lt;i&gt;</code> element, is used semantically to convey text in an alternative voice or tone, almost as if it were placed in quotation marks. Again, we will need to gauge the significance of the text we want to italicize and choose an element accordingly.
+</p>
+
+<p>
+Here’s the HTML code for italicizing:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orgf7e0d10"><span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Stressed emphasis </span><span style="color: #75715E;">--&gt;</span>
+&lt;<span style="color: #A6E22E;">p</span>&gt;I &lt;<span style="color: #A6E22E;">em</span>&gt;<span style="color: #222222; font-style: italic;">love</span>&lt;/<span style="color: #A6E22E;">em</span>&gt; Chicago!&lt;/<span style="color: #A6E22E;">p</span>&gt;
+
+<span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Alternative voice or tone </span><span style="color: #75715E;">--&gt;</span>
+&lt;<span style="color: #A6E22E;">p</span>&gt;The name &lt;<span style="color: #A6E22E;">i</span>&gt;<span style="color: #222222; font-style: italic;">Shay</span>&lt;/<span style="color: #A6E22E;">i</span>&gt; means a gift.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org7a94347" class="outline-4">
+<h4 id="org7a94347"><span class="section-number-4">4.4.1</span> Italicize Text with Emphasis Demo</h4>
+<div class="outline-text-4" id="text-4-4-1">
+<div class="org-src-container">
+<pre class="src src-html" id="orgef973b4"><span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Stressed emphasis </span><span style="color: #75715E;">--&gt;</span>&lt;<span style="color: #A6E22E;">p</span>&gt;I &lt;<span style="color: #A6E22E;">em</span>&gt;<span style="color: #222222; font-style: italic;">love</span>&lt;/<span style="color: #A6E22E;">em</span>&gt; Chicago!&lt;/<span style="color: #A6E22E;">p</span>&gt;
+<span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Alternative voice or tone </span><span style="color: #75715E;">--&gt;</span>&lt;<span style="color: #A6E22E;">p</span>&gt;The name &lt;<span style="color: #A6E22E;">i</span>&gt;<span style="color: #222222; font-style: italic;">Shay</span>&lt;/<span style="color: #A6E22E;">i</span>&gt; means a gift.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-html" id="org2b22277">body {
+  margin: 0;
+}
+p:first-of-type {
+  margin-top: 0;
+}
+p:last-of-type {
+  margin-bottom: 0;
+}
+</pre>
+</div>
+
+<p>
+Result:
+</p>
+
+<div class="figure">
+<p><img src="./img/ital.png" alt="ital.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>Italicize demo</p>
+</div>
+
+<p>
+These text-level elements are quite handy for bringing our content to life. In addition to these, there are structurally based elements. Whereas text-based elements identify headings and paragraphs, structural elements identify groupings of content such as headers, articles, footers, and so forth. Let's take a look.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3890072" class="outline-2">
+<h2 id="org3890072"><span class="section-number-2">5</span> Building Structure</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+For the longest time the structure of a web page was built using divisions. The problem was that divisions provide no semantic value, and it was fairly difficult to determine the intention of these divisions. Fortunately HTML5 introduced new <a href="http://dev.opera.com/articles/new-structural-elements-in-html5/">structurally based elements</a>, including the <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, and <code>&lt;footer&gt;</code> elements.
+</p>
+
+<p>
+All of these new elements are intended to give meaning to the organization of our pages and improve our structural semantics. They are all block-level elements and do not have any implied position or style. Additionally, all of these elements may be used multiple times per page, so long as each use reflects the proper semantic meaning.
+</p>
+
+<p>
+Let’s roll up our sleeves and take a closer look.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/html5.png" alt="html5.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>One possible example of HTML5 structural elements giving meaning to the organization of our pages</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc085cad" class="outline-2">
+<h2 id="orgc085cad"><span class="section-number-2">6</span> Header</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+The <code>&lt;header&gt;</code> element, like it sounds, is used to identify the top of a page, article, section, or other segment of a page. In general, the <code>&lt;header&gt;</code> element may include a heading, introductory text, and even navigation.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="org2db54b5">&lt;<span style="color: #A6E22E;">header</span>&gt;...&lt;/<span style="color: #A6E22E;">header</span>&gt;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org363669a" class="outline-3">
+<h3 id="org363669a"><span class="section-number-3">6.1</span> &lt;header&gt; vs. &lt;head&gt; vs. &lt;h1&gt; through &lt;h6&gt; Elements</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+It is easy to confuse the <code>&lt;header&gt;</code> element with the <code>&lt;head&gt;</code> element or the heading elements, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>. They all have different semantic meanings and should be used according to their meanings.
+</p>
+
+<ul class="org-ul">
+<li>The <code>&lt;header&gt;</code> element is a structural element that outlines the heading of a segment of a page. It falls within the <code>&lt;body&gt;</code> element.</li>
+
+<li>The <code>&lt;head&gt;</code> element is not displayed on a page and is used to outline metadata, including the document title, and links to external files. It falls directly within the <code>&lt;html&gt;</code> element.</li>
+
+<li>Heading elements, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are used to designate multiple levels of text headings throughout a page.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9b4ca28" class="outline-2">
+<h2 id="org9b4ca28"><span class="section-number-2">7</span> Navigation</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+The <code>&lt;nav&gt;</code> element identifies a section of major navigational links on a page. The <code>&lt;nav&gt;</code> element should be reserved for primary navigation sections only, such as global navigation, a table of contents, previous/next links, or other noteworthy groups of navigational links.
+</p>
+
+<p>
+Most commonly, links included within the <code>&lt;nav&gt;</code> element will link to other pages within the same website or to parts of the same web page. Miscellaneous one-off links should not be wrapped within the <code>&lt;nav&gt;</code> element; they should use the anchor element, <code>&lt;a&gt;</code>, and the anchor element alone.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="org66113f2">&lt;<span style="color: #A6E22E;">nav</span>&gt;...&lt;/<span style="color: #A6E22E;">nav</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org636a1bf" class="outline-2">
+<h2 id="org636a1bf"><span class="section-number-2">8</span> Article</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+The <code>&lt;article&gt;</code> element is used to identify a section of independent, self-contained content that may be independently distributed or reused. We'll often use the &lt;article&gt; element to mark up blog posts, newspaper articles, user-submitted content, and the like.
+</p>
+
+<p>
+When deciding whether to use the <code>&lt;article&gt;</code> element, we must determine if the content within the element could be replicated elsewhere without any confusion. If the content within the <code>&lt;article&gt;</code> element were removed from the context of the page and placed, for example, within an email or printed work, that content should still make sense.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orgcd3a93c">&lt;<span style="color: #A6E22E;">article</span>&gt;...&lt;/<span style="color: #A6E22E;">article</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6230377" class="outline-2">
+<h2 id="org6230377"><span class="section-number-2">9</span> Section</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+The <code>&lt;section&gt;</code> element is used to identify a thematic grouping of content, which generally, but not always, includes a heading. The grouping of content within the <code>&lt;section&gt;</code> element may be generic in nature, but it's useful to identify all of the content as related.
+</p>
+
+<p>
+The <code>&lt;section&gt;</code> element is commonly used to break up and provide hierarchy to a page.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orgb49ce06">&lt;<span style="color: #A6E22E;">section</span>&gt;...&lt;/<span style="color: #A6E22E;">section</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgad36436" class="outline-2">
+<h2 id="orgad36436"><span class="section-number-2">10</span> Deciding Between &lt;article&gt;, &lt;section&gt;, or &lt;div&gt; Elements</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+At times it becomes fairly difficult to decide which element &#x2013; <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, or <code>&lt;div&gt;</code> &#x2013; is the best element for the job based on its semantic meaning. The trick here, as with every semantic decision, is to look at the content.
+</p>
+
+<p>
+Both the <code>&lt;article&gt;</code> and <code>&lt;section&gt;</code> elements contribute to a document's structure and help to outline a document. If the content is being grouped solely for styling purposes and doesn't provide value to the outline of a document, use the <code>&lt;div&gt;</code> element.
+</p>
+
+<p>
+If the content adds to the document outline and it can be independently redistributed or syndicated, use the <code>&lt;article&gt;</code> element.
+</p>
+
+<p>
+If the content adds to the document outline and represents a thematic group of content, use the <code>&lt;section&gt;</code> element.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org915c013" class="outline-2">
+<h2 id="org915c013"><span class="section-number-2">11</span> Aside</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+The <code>&lt;aside&gt;</code> element holds content, such as sidebars, inserts, or brief explanations, that is tangentially related to the content surrounding it. When used within an <code>&lt;article&gt;</code> element, for example, the <code>&lt;aside&gt;</code> element may identify content related to the author of the article.
+</p>
+
+<p>
+We may instinctively think of an <code>&lt;aside&gt;</code> element as an element that appears off to the left or right side of a page. We have to remember, though, that all of the structural elements, including the <code>&lt;aside&gt;</code> element, are block-level elements and as such will appear on a new line, occupying the full available width of the page or of the element they are nested within, also known as their parent element.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="org947ed33">&lt;<span style="color: #A6E22E;">aside</span>&gt;...&lt;/<span style="color: #A6E22E;">aside</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga678d36" class="outline-2">
+<h2 id="orga678d36"><span class="section-number-2">12</span> Footer</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+The <code>&lt;footer&gt;</code> element identifies the closing or end of a page, article, section, or other segment of a page. Generally the <code>&lt;footer&gt;</code> element is found at the bottom of its parent. Content within the <code>&lt;footer&gt;</code> element should be relative information and should not diverge from the document or section it is included within.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orgbb46364">&lt;<span style="color: #A6E22E;">footer</span>&gt;...&lt;/<span style="color: #A6E22E;">footer</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orged54d92" class="outline-2">
+<h2 id="orged54d92"><span class="section-number-2">13</span> In Practice</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+Currently, our Styles Conference website lacks real structure&#x2013;and content for that matter. Let's take some time to flesh out our home page a bit.
+</p>
+
+<ol class="org-ol">
+<li><p>
+Using our existing <code>index.html</code> file, let's add in a <code>&lt;header&gt;</code> element. Our <code>&lt;header&gt;</code> element should include our existing <code>&lt;h1&gt;</code> element; let's also add an <code>&lt;h3&gt;</code> element as a tagline to support our <code>&lt;h1&gt;</code> element.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="orgf610550">&lt;<span style="color: #A6E22E;">header</span>&gt;
+&lt;<span style="color: #A6E22E;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Styles Conference</span>&lt;/<span style="color: #A6E22E;">h1</span>&gt;
+  &lt;<span style="color: #A6E22E;">h3</span>&gt;<span style="color: #222222; font-style: italic; text-decoration: underline;">August 24</span><span style="color: #222222; font-style: italic; text-decoration: underline;">&amp;ndash;</span><span style="color: #222222; font-style: italic; text-decoration: underline;">26th </span><span style="color: #222222; font-style: italic; text-decoration: underline;">&amp;mdash;</span><span style="color: #222222; font-style: italic; text-decoration: underline;"> Chicago, IL</span>&lt;/<span style="color: #A6E22E;">h3</span>&gt;
+&lt;/<span style="color: #A6E22E;">header</span>&gt;
+</pre>
+</div></li>
+
+<li><p>
+After our <code>&lt;header&gt;</code> element, let's add a new group of content, using the <code>&lt;section&gt;</code> element, that introduces our conference. We'll begin this section with a new <code>&lt;h2&gt;</code> element and end it with our existing paragraph.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="orge2638fd">&lt;<span style="color: #A6E22E;">section</span>&gt;
+  &lt;<span style="color: #A6E22E;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Dedicated to the Craft of Building Websites</span>&lt;/<span style="color: #A6E22E;">h2</span>&gt;
+  &lt;<span style="color: #A6E22E;">p</span>&gt;Every year the brightest web designers and front-end developers descend on Chicago to discuss the latest technologies. Join us this August!&lt;/<span style="color: #A6E22E;">p</span>&gt;
+&lt;/<span style="color: #A6E22E;">section</span>&gt;
+</pre>
+</div></li>
+
+<li><p>
+Following the introduction to our conference, let's add another group of content that teases a few of the pages we'll be adding, specifically the Speakers, Schedule, and Venue pages. Each of the pages we're teasing should also reside within its own section and include supporting text. We'll group all of the teasers inside a <code>&lt;section&gt;</code> element, and each individual teaser will be wrapped within a <code>&lt;section&gt;</code> element as well. In all, we'll have three <code>&lt;section&gt;</code> elements inside another <code>&lt;section&gt;</code> element, which is all right.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="orge7d9732">&lt;<span style="color: #A6E22E;">section</span>&gt;
+  &lt;<span style="color: #A6E22E;">section</span>&gt;
+    &lt;<span style="color: #A6E22E;">h5</span>&gt;<span style="text-decoration: underline;">Speakers</span>&lt;/<span style="color: #A6E22E;">h5</span>&gt;
+    &lt;<span style="color: #A6E22E;">h3</span>&gt;<span style="color: #222222; font-style: italic; text-decoration: underline;">World-Class Speakers</span>&lt;/<span style="color: #A6E22E;">h3</span>&gt;
+    &lt;<span style="color: #A6E22E;">p</span>&gt;Joining us from all around the world are over twenty fantastic speakers, here to share their stories.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+  &lt;/<span style="color: #A6E22E;">section</span>&gt;
+  ...
+&lt;/<span style="color: #A6E22E;">section</span>&gt;
+</pre>
+</div></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+Lastly, let's add our copyright within the <code>&lt;footer&gt;</code> element at the end of our page. To do so let's use the <code>&lt;small&gt;</code> element, which semantically represents side comments and small print&#x2013;perfect for our copyright.
+</p>
+
+<p>
+Generally, content within the &lt;small&gt; element will be rendered as, well, small, but our CSS reset will prevent that from happening.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orgb69e604">&lt;<span style="color: #A6E22E;">footer</span>&gt;
+  &lt;<span style="color: #A6E22E;">small</span>&gt;<span style="color: #F8F8F2; background-color: #272822;">&amp;copy;</span><span style="color: #F8F8F2; background-color: #272822;"> Styles Conference</span>&lt;/<span style="color: #A6E22E;">small</span>&gt;
+&lt;/<span style="color: #A6E22E;">footer</span>&gt;
+</pre>
+</div></li>
+</ol>
+
+<p>
+Now we can see our home page beginning to come to life.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/practice-1.png" alt="practice-1.png" />
+</p>
+<p><span class="figure-number">Figure 6: </span>Our home page after adding more content and structure</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge0148af" class="outline-2">
+<h2 id="orge0148af"><span class="section-number-2">14</span> Encoding Special Characters</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+The <code>&lt;h3&gt;</code> element within our <code>&lt;header&gt;</code> element, as well as the <code>&lt;small&gt;</code> element within our <code>&lt;footer&gt;</code> element, has some interesting things going on. Specifically, a few special characters within these elements are being encoded.
+</p>
+
+<p>
+Special characters include various punctuation marks, accented letters, and symbols. When typed directly into HTML, they can be misunderstood or mistaken for the wrong character; thus they need to be encoded.
+</p>
+
+<p>
+Each encoded character will begin with an <b>ampersand</b>, <code>&amp;</code>, and end with a <b>semicolon</b>, <code>;</code>. What falls between the ampersand and semicolon is a character's unique encoding, be it a name or numeric encoding.
+</p>
+
+<p>
+For example, we would encode the word "resumé" as <code>resum&amp;eacute;</code>. Within our header we have encoded both en and em dashes, and within our footer we have encoded the copyright symbol. For reference, a long list of character encodings may be found at <a href="http://copypastecharacter.com/">Copy Paste Character</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3bf1205" class="outline-2">
+<h2 id="org3bf1205"><span class="section-number-2">15</span> Creating Hyperlinks</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+Along with text, one of the core components of the Internet is the hyperlink, which provides the ability to link from one web page or resource to another. Hyperlinks are established using the anchor, <code>&lt;a&gt;</code>, inline-level element. In order to create a link from one page (or resource) to another, the <code>href</code> attribute, known as a hyperlink reference, is required. The <code>href</code> attribute value identifies the destination of the link.
+</p>
+
+<p>
+For example, clicking the text Finki, which is wrapped inside the anchor element with the href attribute value of <a href="http://finki.ukim.mk">http://finki.ukim.mk</a>, will take users to Finki's website.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="orgfc4b2c4">&lt;<span style="color: #A6E22E;">footer</span>&gt;
+  &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"http://finki.ukim.mk"</span>&gt;Finki&lt;/<span style="color: #A6E22E;">a</span>&gt;
+&lt;/<span style="color: #A6E22E;">footer</span>&gt;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org09697e1" class="outline-3">
+<h3 id="org09697e1"><span class="section-number-3">15.1</span> Wrapping Block-Level Elements with Anchors</h3>
+<div class="outline-text-3" id="text-15-1">
+<p>
+By nature the anchor element, <code>&lt;a&gt;</code>, is an inline element, and, according to web standards, inline-level elements may not wrap block-level elements. With the introduction of HTML5, however, anchor elements specifically have permission to wrap either block-, inline-, or any other level elements. This is a break from the standard convention, but it’s permissible in order to enable entire blocks of content on a page to become links.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1f49a1a" class="outline-3">
+<h3 id="org1f49a1a"><span class="section-number-3">15.2</span> Relative &amp; Absolute Paths</h3>
+<div class="outline-text-3" id="text-15-2">
+<p>
+The two most common types of links are links to <i>other pages</i> of the same website and links to other websites. These links are identified by their <code>href</code> attribute values, also known as their paths.
+</p>
+
+<p>
+Links pointing to other pages of the same website will have a relative path, which does not include the domain (.com, .org, .edu, etc.) in the <code>href</code> attribute value. Because the link is pointing to another page on the same website, the <code>href</code> attribute value needs to include only the filename of the page being linked to: <code>about.html</code>, for example.
+</p>
+
+<p>
+Should the page being linked to reside within a different directory, or folder, the <code>href</code> attribute value needs to reflect this as well. Say the <code>about.html</code> page resides within the pages directory; the relative path would then be <code>pages/about.html</code>.
+</p>
+
+<p>
+Linking to other websites outside of the current one requires an absolute path, where the <code>href</code> attribute value must include the full domain. A link to Google would need the href attribute value of <code>http://google.com</code>, starting with http and including the domain, <code>.com</code> in this case.
+</p>
+
+<p>
+Here clicking on the text "About" will open the <code>about.html</code> page inside our browser. Clicking the text "Google," on the other hand, will open <code>http://google.com/</code> within our browser.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="org6a37395"><span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Relative Path </span><span style="color: #75715E;">--&gt;</span>
+&lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"about.html"</span>&gt;About&lt;/<span style="color: #A6E22E;">a</span>&gt;
+
+<span style="color: #75715E;">&lt;!-- </span><span style="color: #75715E;">Absolute Path </span><span style="color: #75715E;">--&gt;</span>
+&lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"http://www.google.com/"</span>&gt;Google&lt;/<span style="color: #A6E22E;">a</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4bc06db" class="outline-3">
+<h3 id="org4bc06db"><span class="section-number-3">15.3</span> Linking to an Email Address</h3>
+<div class="outline-text-3" id="text-15-3">
+<p>
+Occasionally we may want to create a hyperlink to our email address &#x2013; for example, hyperlink text that says "Email Me," which when clicked opens a user's default email client and pre-populates part of an email. At a minimum the email address to which the email is being sent is populated; other information such as a subject line and body text may also be included.
+</p>
+
+<p>
+To create an email link, the href attribute value needs to start with <code>mailto:</code> followed by the email address to which the email should be sent. To create an email link to <code>finki@finki.ukim.mk</code>, for example, the href attribute value would be <code>mailto:finki@finki.ukim.mk</code>.
+</p>
+
+<p>
+Additionally, <b>subject</b>, <b>body text</b>, and other information for the email may be populated. To add a subject line, we'll include the <code>subject=</code> parameter after the email address. The first parameter following the email address must begin with a <b>question mark</b>, <code>?</code>, to bind it to the hyperlink path. Multiple words within a subject line require that spaces be encoded using <code>%20</code>.
+</p>
+
+<p>
+Adding body text works in the same way as adding the subject, this time using the <code>body=</code> parameter in the <code>href</code> attribute value. Because we are binding one parameter to another we need to use the ampersand, <code>&amp;</code>, to separate the two. As with the subject, spaces must be encoded using <code>%20</code>, and line breaks must be encoded using <code>%0A</code>.
+</p>
+
+<p>
+Altogether, a link to <code>finki@finki.ukim.mk</code> with the subject of "Reaching Out" and body text of "How are you" would require an <code>href</code> attribute value of <code>mailto:finki@finki.ukim.mk?subject=Reaching%20Out&amp;body=How%20are%20you</code>.
+</p>
+
+<p>
+Here’s the full breakdown:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orge2a10ca">&lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"mailto:finki@finki.ukim.mk?subject=Reaching%20Out&amp;body=How%20are%20you"</span>&gt;Email Me&lt;/<span style="color: #A6E22E;">a</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb3b6819" class="outline-3">
+<h3 id="orgb3b6819"><span class="section-number-3">15.4</span> Opening Links in a New Window</h3>
+<div class="outline-text-3" id="text-15-4">
+<p>
+One feature available with hyperlinks is the ability to determine where a link opens when clicked. Typically, links open in the same window from which they are clicked; however, links may also be opened in new windows.
+</p>
+
+<p>
+To trigger the action of opening a link in a new window, use the <code>target</code> attribute with a value of <code>_blank</code>. The target attribute determines exactly where the link will be displayed, and the <code>_blank</code> value specifies a new window.
+</p>
+
+<p>
+To open <code>http://finki.ukim.mk/</code> in a new window, the code would look like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orgd68f078">&lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"http://finki.ukim.mk"</span> <span style="color: #FD971F;">target</span>=<span style="color: #E6DB74;">"_blank"</span>&gt;Finki&lt;/<span style="color: #A6E22E;">a</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6cdf8e6" class="outline-3">
+<h3 id="org6cdf8e6"><span class="section-number-3">15.5</span> Linking to Parts of the Same Page</h3>
+<div class="outline-text-3" id="text-15-5">
+<p>
+Periodically we'll see hyperlinks that link to part of the same page the link appears on. A common example of these same-page links are "Back to top" links that return a user to the top of a page.
+</p>
+
+<p>
+We can create an on-page link by first setting an id attribute on the element we wish to link to, then using the value of that id attribute within an anchor element's href attribute.
+</p>
+
+<p>
+Using the "Back to top" link as an example, we can place an <code>id</code> attribute value of top on the <code>&lt;body&gt;</code> element. Now we can create an anchor element with an <code>href</code> attribute value of <code>#top</code>, pound sign and all, to link to the beginning of the <code>&lt;body&gt;</code> element.
+</p>
+
+<p>
+Our code for this same-page link would look like the following:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orgc354f10">&lt;<span style="color: #A6E22E;">body</span> <span style="color: #FD971F;">id</span>=<span style="color: #E6DB74;">"top"</span>&gt;
+  ...
+  &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"#top"</span>&gt;Back to top&lt;/<span style="color: #A6E22E;">a</span>&gt;
+  ...
+&lt;/<span style="color: #A6E22E;">body</span>&gt;
+</pre>
+</div>
+
+<p>
+Hyperlinks are incredibly useful and have revolutionized how we use the Internet. So far we've covered how to link to other pages or websites, as well as how to create email links and links to parts of the same page. Before we go any further, let's create some links of our own.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8274ed7" class="outline-2">
+<h2 id="org8274ed7"><span class="section-number-2">16</span> In Practice</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+It's time to take Styles Conference from a single-page website to a full-blown website with multiple pages, all of which will be linked together using hyperlinks.
+</p>
+
+<ol class="org-ol">
+<li>We' begin by making our "Styles Conference" text inside the <code>&lt;h1&gt;</code> element within our <code>&lt;header&gt;</code> element link to the <code>index.html</code> page. Because we are already on the <code>index.html</code> page, this may seem a little odd &#x2013; and rightfully so &#x2013; but as the header is replicated on other pages, linking back to the home page will make sense.</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-html" id="org1c8764f">&lt;<span style="color: #A6E22E;">h1</span>&gt;
+  &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"index.html"</span>&gt;Styles Conference&lt;/<span style="color: #A6E22E;">a</span>&gt;
+&lt;/<span style="color: #A6E22E;">h1</span>&gt;
+</pre>
+</div>
+
+<ol class="org-ol">
+<li><p>
+In order to navigate across all of the different pages, we're going add in a navigation menu, using the <code>&lt;nav&gt;</code> element, within our <code>&lt;header&gt;</code> element. We'll be creating <i>Speakers</i>, <i>Schedule</i>, <i>Venue</i>, and <i>Register</i> pages to go with our home page, so we should create links for all of them.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="orgcbaefe1">&lt;<span style="color: #A6E22E;">header</span>&gt;
+  ...
+  &lt;<span style="color: #A6E22E;">nav</span>&gt;
+    &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"index.html"</span>&gt;Home&lt;/<span style="color: #A6E22E;">a</span>&gt;
+    &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"speakers.html"</span>&gt;Speakers&lt;/<span style="color: #A6E22E;">a</span>&gt;
+    &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"schedule.html"</span>&gt;Schedule&lt;/<span style="color: #A6E22E;">a</span>&gt;
+    &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"venue.html"</span>&gt;Venue&lt;/<span style="color: #A6E22E;">a</span>&gt;
+    &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"register.html"</span>&gt;Register&lt;/<span style="color: #A6E22E;">a</span>&gt;
+  &lt;/<span style="color: #A6E22E;">nav</span>&gt;
+&lt;/<span style="color: #A6E22E;">header</span>&gt;
+</pre>
+</div></li>
+
+<li><p>
+Let's also add the same navigation menu from our <code>&lt;header&gt;</code> element to our <code>&lt;footer&gt;</code> element for convenience.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="org0afec0b">&lt;<span style="color: #A6E22E;">footer</span>&gt;
+  ...
+  &lt;<span style="color: #A6E22E;">nav</span>&gt;
+    &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"index.html"</span>&gt;Home&lt;/<span style="color: #A6E22E;">a</span>&gt;
+    &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"speakers.html"</span>&gt;Speakers&lt;/<span style="color: #A6E22E;">a</span>&gt;
+    &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"schedule.html"</span>&gt;Schedule&lt;/<span style="color: #A6E22E;">a</span>&gt;
+    &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"venue.html"</span>&gt;Venue&lt;/<span style="color: #A6E22E;">a</span>&gt;
+    &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"register.html"</span>&gt;Register&lt;/<span style="color: #A6E22E;">a</span>&gt;
+  &lt;/<span style="color: #A6E22E;">nav</span>&gt;
+&lt;/<span style="color: #A6E22E;">footer</span>&gt;
+</pre>
+</div></li>
+
+<li><p>
+Within the <code>&lt;section&gt;</code> element that introduces our conference, just below our header, we should also include a link to register for the conference. Placing a link below the paragraph will work perfectly.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="org03828ca">&lt;<span style="color: #A6E22E;">section</span>&gt;
+  ...
+  &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"register.html"</span>&gt;Register Now&lt;/<span style="color: #A6E22E;">a</span>&gt;
+&lt;/<span style="color: #A6E22E;">section</span>&gt;
+</pre>
+</div></li>
+
+<li><p>
+We can't forget to add links to all of the sections teasing our other pages. Inside each section, let's wrap both the <code>&lt;h3&gt;</code> and <code>&lt;h5&gt;</code> elements within an anchor element linking to the proper page. We'll want to make sure we do this for every section accordingly.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="org0dcbe35">&lt;<span style="color: #A6E22E;">section</span>&gt;
+  &lt;<span style="color: #A6E22E;">section</span>&gt;
+    &lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"speakers.html"</span>&gt;
+      &lt;<span style="color: #A6E22E;">h5</span>&gt;<span style="text-decoration: underline;">Speakers</span>&lt;/<span style="color: #A6E22E;">h5</span>&gt;
+      &lt;<span style="color: #A6E22E;">h3</span>&gt;<span style="color: #222222; font-style: italic; text-decoration: underline;">World-Class Speakers</span>&lt;/<span style="color: #A6E22E;">h3</span>&gt;
+    &lt;/<span style="color: #A6E22E;">a</span>&gt;
+    &lt;<span style="color: #A6E22E;">p</span>&gt;Joining us from all around the world are over twenty fantastic speakers, here to share their stories.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+  &lt;/<span style="color: #A6E22E;">section</span>&gt;
+  ...
+&lt;/<span style="color: #A6E22E;">section</span>&gt;
+</pre>
+</div></li>
+
+<li>Now we need to create a handful of new pages. Let's create <code>speakers.html</code>, <code>schedule.html</code>, <code>venue.html</code>, and <code>register.html</code> files. These files should live within the same folder as the <code>index.html</code> file, and, because we're keeping them inside the same folder, all of our links should work as expected. To ensure that all of our pages look the same, let's make sure that all of these new files have the same document structure and <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> elements as the <code>index.html</code> file.</li>
+</ol>
+
+<p>
+It’s official, we’re no longer working with a single page but indeed a full website.
+</p>
+
+<div class="figure">
+<p><img src="./img/practice-2.png" alt="practice-2.png" />
+</p>
+<p><span class="figure-number">Figure 7: </span>Our home page after all of the different links and navigation have been added</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgba7f667" class="outline-2">
+<h2 id="orgba7f667"><span class="section-number-2">17</span> Summary</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+Semantics, as discussed within this lesson, are essential for providing our HTML with structure and meaning. Moving forward we’ll periodically introduce new elements, all of which will come with their own semantic meaning. It is the meaning of all of these elements that will provide our content with the most value.
+</p>
+
+<p>
+Once again, in this lesson we covered the following:
+</p>
+
+<ul class="org-ul">
+<li>What semantics are and why they are important</li>
+<li>&lt;div&gt;s and &lt;spans&gt;s, and the difference between block- and inline-level elements</li>
+<li>Which text-based elements best represent the content of a page</li>
+<li>The HTML5 structural elements and how to define the structure and organization of our content and page</li>
+<li>How to use hyperlinks to navigate between web pages or websites</li>
+</ul>
+
+<p>
+Hopefully you're starting to feel pretty good about HTML. There is still quite a bit to learn, but the foundation is in place. Next up, we’ll take a deeper look into CSS.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Boban Joksimoski</p>
+<p class="date">Created: 2019-03-15 Fri 09:04</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

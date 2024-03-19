@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-03-15 Fri 08:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intro to web design</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Boban Joksimoski" />
+<meta name="description" content="Intro into Web Design"
+ />
+<meta name="keywords" content="intro" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./lib/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="./lib/readtheorg.css"/>
+<script src="./lib/jquery.min.jsm"></script>
+<script src="./lib/bootstrap.min.js"></script>
+<script type="text/javascript" src="./lib/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="./lib/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Intro to web design</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1b719a2">1. Basic concepts</a>
+<ul>
+<li><a href="#org3f02c32">1.1. Delivering web pages</a></li>
+</ul>
+</li>
+<li><a href="#org46cdb6c">2. Building Your First Web Page</a>
+<ul>
+<li><a href="#org5e94e3b">2.1. Good vs. Bad web design?</a></li>
+<li><a href="#org9ca8e7b">2.2. What Are HTML &amp; CSS?</a></li>
+</ul>
+</li>
+<li><a href="#org236dc16">3. Understanding Common HTML Terms</a>
+<ul>
+<li><a href="#org192c676">3.1. Elements</a></li>
+<li><a href="#org1094e44">3.2. Tags</a></li>
+<li><a href="#orgc14a6c4">3.3. Attributes</a></li>
+<li><a href="#org652e0d1">3.4. Setting Up the HTML Document Structure</a>
+<ul>
+<li><a href="#org00ea7d4">3.4.1. Self-Closing Elements</a></li>
+<li><a href="#org71ff41a">3.4.2. Code Validation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgaedd6d0">4. In Practice</a></li>
+<li><a href="#orgb357941">5. Understanding Common CSS Terms</a>
+<ul>
+<li><a href="#org68806f3">5.1. Selectors</a></li>
+<li><a href="#orgca3c0ff">5.2. Properties</a></li>
+<li><a href="#org1c2133d">5.3. Values</a></li>
+</ul>
+</li>
+<li><a href="#org92758c7">6. Working with Selectors</a>
+<ul>
+<li><a href="#orgdd7b416">6.1. Type Selectors</a></li>
+<li><a href="#orgca2ef59">6.2. Class Selectors</a></li>
+<li><a href="#orgcfe09ca">6.3. ID Selectors</a></li>
+<li><a href="#orgc2ec135">6.4. Additional Selectors</a></li>
+</ul>
+</li>
+<li><a href="#orgba2f664">7. Referencing CSS</a></li>
+<li><a href="#org3e6e026">8. Using CSS Resets</a>
+<ul>
+<li><a href="#org1dfbb11">8.1. Cross-Browser Compatibility &amp; Testing</a></li>
+</ul>
+</li>
+<li><a href="#orgd28de67">9. In Practice</a></li>
+<li><a href="#org31ecd70">10. Summary</a></li>
+<li><a href="#org13bf60d">11. References and reading material</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1b719a2" class="outline-2">
+<h2 id="org1b719a2"><span class="section-number-2">1</span> Basic concepts</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Internet is a network of interconected networks, that share data and information.
+World Wide Web (WWW) is part of the Internet that is concerned with displaying HTML documents and their serving to the users. WWW standards are responsibility of the <a href="http://www.w3c.org/">WWW Consortium - W3C</a>.
+</p>
+</div>
+
+<div id="outline-container-org3f02c32" class="outline-3">
+<h3 id="org3f02c32"><span class="section-number-3">1.1</span> Delivering web pages</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+We can divide the delivery of the web content in two types: <b>static</b> and <b>dynamic</b>
+Static sites do not process the data from clients and the information are "same" for all users (all of the users are viewing the same page).
+</p>
+
+
+<div class="figure">
+<p><img src="./img/Fig-0.01.png" alt="Fig-0.01.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Serving of static web pages</p>
+</div>
+
+<p>
+Dynamic web pages are generated individually for every user and the displayed data is different for each client.
+</p>
+
+
+<div id="org9dd1444" class="figure">
+<p><img src="./img/fig-0.02.png" alt="fig-0.02.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Serving of dynamic web pages</p>
+</div>
+
+<p>
+When serving static or dynamic web-pages we always have a client, usually a web browser, and a web server. <b>Web server</b> is a specialized program, with the primary task of communicating with clients and delivering content to them. The content is usually html, css, javascript, image, multimedia or other types of files.
+</p>
+
+<p>
+When working with dynamic web pages, the content that should be delivered to the client is usually generate on-the-fly by an <b>application server</b>. Application server uses server-side programming languages and platforms (like Java, PHP, C#/.NET, Python,&#x2026;) to create the necessary content. Usually the application server communicates with a <b>database server</b>. The database server is responsible for storing and retrieving various data needed for the assembly of the web content.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org46cdb6c" class="outline-2">
+<h2 id="org46cdb6c"><span class="section-number-2">2</span> Building Your First Web Page</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+If you can, imagine a time before the invention of the Internet. Websites didn't exist, and books, printed on paper and tightly bound, were your primary source of information. It took a considerable amount of effort &#x2013; and reading &#x2013; to track down the exact piece of information you were after.
+</p>
+
+<p>
+Today you can open a web browser, jump over to your search engine of choice, and search away. Any bit of imaginable information rests at your fingertips. And chances are someone somewhere has built a website with your exact search in mind.
+</p>
+
+<p>
+We will learn how to build websites with HTML and CSS, it is important to understand the differences between the two languages, the syntax of each language, and some common terminology.
+</p>
+</div>
+
+
+<div id="outline-container-org5e94e3b" class="outline-3">
+<h3 id="org5e94e3b"><span class="section-number-3">2.1</span> Good vs. Bad web design?</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Web design encompasses many different skills and disciplines in the production and maintenance of websites. The different areas of web design include web graphic design; interface design; authoring, including standardised code and proprietary software; user experience design; and search engine optimization.
+</p>
+
+<p>
+The first and basic goal of web design is to enhance the "experience" of the user. A web page is consisted of text, pictures, multimedia data and interactive elements. ALL elements should compose a experience that is aesthetically beautiful.
+</p>
+
+<p>
+A good web design is valued highly, while a bad design can be a major disadvantage. Although a good design can not be measured, there are rules that can help you build a good design. In this course we will try to explore the basics of good web design.
+</p>
+
+<p>
+Bad design is pretty common. For example take the designs listed at the following link <a href="http://www.webpagesthatsuck.com/">http://www.webpagesthatsuck.com/</a>. Another example is the former design of the <a href="http://art.yale.edu/">art department at Yale</a>. For an art department, this is a pretty bad design. The irony is that this is an improved version of the previous site.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9ca8e7b" class="outline-3">
+<h3 id="org9ca8e7b"><span class="section-number-3">2.2</span> What Are HTML &amp; CSS?</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+HTML, HyperText Markup Language, gives content structure and meaning by defining that content as, for example, headings, paragraphs, or images. CSS, or Cascading Style Sheets, is a presentation language created to style the appearance of content—using, for example, fonts or colors.
+</p>
+
+<p>
+The two languages—HTML and CSS—are independent of one another and should remain that way. CSS should not be written inside of an HTML document and vice versa. As a rule, <b>HTML will always represent content</b>, and <b>CSS will always represent the appearance of that content</b>.
+</p>
+
+<p>
+With this understanding of the difference between HTML and CSS, let's dive into HTML in more detail.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org236dc16" class="outline-2">
+<h2 id="org236dc16"><span class="section-number-2">3</span> Understanding Common HTML Terms</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+While getting started with HTML, you will likely encounter new and often strange terms. A good listing of the terminology is given at the following link: <a href="http://www.scriptingmaster.com/html/HTML-terms-glossary.asp">http://www.scriptingmaster.com/html/HTML-terms-glossary.asp</a>.  Over time you will become more and more familiar with all of them, but the three common HTML terms you should begin with are <b>elements</b>, <b>tags</b>, and <b>attributes</b>.
+</p>
+</div>
+
+<div id="outline-container-org192c676" class="outline-3">
+<h3 id="org192c676"><span class="section-number-3">3.1</span> Elements</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Elements are designators that define the structure and content of objects within a page. Some of the more frequently used elements include multiple levels of headings (identified as <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> elements) and paragraphs (identified as the <code>&lt;p&gt;</code> element); the list goes on to include the <code>&lt;a&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;strong&gt;</code>, and <code>&lt;em&gt;</code> elements, and many more.
+</p>
+
+<p>
+Elements are identified by the use of less-than and greater-than angle brackets, <b>&lt; &gt;</b>, surrounding the element name. Thus, an element will look like the following:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="org9bb17a4">&lt;<span style="color: #A6E22E;">a</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1094e44" class="outline-3">
+<h3 id="org1094e44"><span class="section-number-3">3.2</span> Tags</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+The use of less-than and greater-than angle brackets surrounding an element creates what is known as a tag. Tags most commonly occur in pairs of opening and closing tags.
+</p>
+
+<p>
+An opening tag marks the beginning of an element. It consists of a less-than sign followed by an element's name, and then ends with a greater-than sign; for example, <code>&lt;div&gt;</code>.
+</p>
+
+<p>
+A closing tag marks the end of an element. It consists of a less-than sign followed by a forward slash and the element’s name, and then ends with a greater-than sign; for example, <code>&lt;/div&gt;</code>.
+</p>
+
+<p>
+The content that falls between the opening and closing tags is the content of that element. An anchor link, for example, will have an opening tag of <code>&lt;a&gt;</code> and a closing tag of <code>&lt;/a&gt;</code>. What falls between these two tags will be the content of the anchor link.
+</p>
+
+<p>
+So, anchor tags will look a bit like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="orgb1c06f4">&lt;<span style="color: #A6E22E;">a</span>&gt;...&lt;/<span style="color: #A6E22E;">a</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgc14a6c4" class="outline-3">
+<h3 id="orgc14a6c4"><span class="section-number-3">3.3</span> Attributes</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Attributes are properties used to provide additional information about an element. The most common attributes include the <b><code>id</code></b> attribute, which identifies an element; the <b><code>class</code></b> attribute, which classifies an element; the <b><code>src</code></b> attribute, which specifies a source for embeddable content; and the <b><code>href</code></b> attribute, which provides a hyperlink reference to a linked resource.
+</p>
+
+<p>
+Attributes are defined within the opening tag, after an element's name. Generally attributes include a name and a value. The format for these attributes consists of the attribute name followed by an equals sign and then a quoted attribute value. For example, an <b><code>&lt;a&gt;</code></b> element including an <code>href</code> attribute would look like the following:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html" id="org9048c36">&lt;<span style="color: #A6E22E;">a</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"http://finki.ukim.mk/"</span>&gt;Faculty of Computer Science and Engineering&lt;/<span style="color: #A6E22E;">a</span>&gt;
+</pre>
+</div>
+
+<p>
+The preceding code will display the text "Faculty of Computer Science and Engineering" on the web page and will take users to <a href="http://www.finki.ukim.mk/">http://www.finki.ukim.mk/</a> upon clicking the "Faculty of Computer Science and Engineering" text. The anchor element is declared with the opening <code>&lt;a&gt;</code> and closing <code>&lt;/a&gt;</code> tags encompassing the text, and the hyperlink reference attribute and value are declared with href="<a href="http://finki.ukim.mk">http://finki.ukim.mk</a>" in the opening tag.
+</p>
+
+
+<div id="org367ec25" class="figure">
+<p><img src="./img/fig-1.01.png" alt="fig-1.01.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>HTML syntax outline including an element, attribute, and tag</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org652e0d1" class="outline-3">
+<h3 id="org652e0d1"><span class="section-number-3">3.4</span> Setting Up the HTML Document Structure</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+HTML documents are plain text documents saved with an .html file extension rather than a .txt file extension. To begin writing HTML, you first need a plain text editor that you are comfortable using. Sadly this <b>does not</b> include Microsoft Word or Pages, as those are <i>rich text editors</i>. Two of the more popular plain text editors for writing HTML and CSS are Dreamweaver and Sublime Text. Free alternatives also include Notepad++ for Windows and TextWrangler for Mac.
+</p>
+
+<p>
+For the purpose of this course, we'll be using <a href="https://www.jetbrains.com/webstorm/">Jetbrains Webstorm</a>. As students of the course, you can use the faculty provided e-mail to register an account on the Jetbrains website, and request licenses for all of the Jetbrains IDE-s
+</p>
+
+<p>
+All HTML documents have a required structure that includes the following declaration and elements: <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code>.
+</p>
+
+<p>
+The document type declaration, or <code>&lt;!DOCTYPE html&gt;</code>, informs web browsers which version of HTML is being used and is placed at the very beginning of the HTML document. Because we'll be using the latest version of HTML, our document type declaration is simply <code>&lt;!DOCTYPE html&gt;</code>. Following the document type declaration, the <code>&lt;html&gt;</code> element signifies the beginning of the document.
+</p>
+
+<p>
+Inside the <code>&lt;html&gt;</code> element, the <code>&lt;head&gt;</code> element identifies the top of the document, including any metadata (accompanying information about the page). The content inside the &lt;head&gt; element is not displayed on the web page itself. Instead, it may include the document title (which is displayed on the title bar in the browser window), links to any external files, or any other beneficial metadata.
+</p>
+
+<p>
+All of the visible content within the web page will fall within the <code>&lt;body&gt;</code> element. A breakdown of a typical HTML document structure looks like this:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-html" id="orgc906b77"><span style="color: #E6DB74;">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color: #A6E22E;">html</span> <span style="color: #FD971F;">lang</span>=<span style="color: #E6DB74;">"en"</span>&gt;
+  &lt;<span style="color: #A6E22E;">head</span>&gt;
+    &lt;<span style="color: #A6E22E;">meta</span> <span style="color: #FD971F;">charset</span>=<span style="color: #E6DB74;">"utf-8"</span>&gt;
+    &lt;<span style="color: #A6E22E;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Hello World</span>&lt;/<span style="color: #A6E22E;">title</span>&gt;
+  &lt;/<span style="color: #A6E22E;">head</span>&gt;
+  &lt;<span style="color: #A6E22E;">body</span>&gt;
+    &lt;<span style="color: #A6E22E;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Hello World</span>&lt;/<span style="color: #A6E22E;">h1</span>&gt;
+    &lt;<span style="color: #A6E22E;">p</span>&gt;This is a web page.&lt;/<span style="color: #A6E22E;">p</span>&gt;
+  &lt;/<span style="color: #A6E22E;">body</span>&gt;
+&lt;/<span style="color: #A6E22E;">html</span>&gt;
+</pre>
+</div>
+
+
+<p>
+The preceding code shows the document beginning with the document type declaration, <code>&lt;!DOCTYPE html&gt;</code>, followed directly by the <code>&lt;html&gt;</code> element. Inside the <code>&lt;html&gt;</code> element come the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> elements. The <code>&lt;head&gt;</code> element includes the character encoding of the page via the <code>&lt;meta charset="utf-8"&gt;</code> tag and the title of the document via the <code>&lt;title&gt;</code> element. The <code>&lt;body&gt;</code> element includes a heading via the <code>&lt;h1&gt;</code> element and a paragraph via the <code>&lt;p&gt;</code> element. Because both the heading and paragraph are nested within the <code>&lt;body&gt;</code> element, they are visible on the web page.
+</p>
+
+<p>
+When an element is placed inside of another element, also known as <b>nested</b>, it is a good idea to indent that element to keep the document structure well organized and legible. In the previous code, both the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> elements were nested—and indented—inside the <code>&lt;html&gt;</code> element. The pattern of indenting for elements continues as new elements are added inside the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> elements.
+</p>
+
+<p>
+The structure outlined here, making use of the <code>&lt;!DOCTYPE html&gt;</code> document type and <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> elements, is quite common. We'll want to keep this document structure handy, as we'll be using it often as we create new HTML documents.
+</p>
+</div>
+
+<div id="outline-container-org00ea7d4" class="outline-4">
+<h4 id="org00ea7d4"><span class="section-number-4">3.4.1</span> Self-Closing Elements</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<p>
+In the previous example, the <b>&lt;meta&gt;</b> element had only one tag and didn't include a closing tag. This is intentional. Not all elements consist of opening and closing tags. Some elements simply receive their content or behavior from attributes within a single tag. The <code>&lt;meta&gt;</code> element is one of these elements. The content of the previous <code>&lt;meta&gt;</code> element is assigned with the use of the charset attribute and value. Other common selfclosing elements include:
+</p>
+<ul class="org-ul">
+<li><code>&lt;br&gt;</code></li>
+<li><code>&lt;embed&gt;</code></li>
+<li><code>&lt;hr&gt;</code></li>
+<li><code>&lt;img&gt;</code></li>
+<li><code>&lt;input&gt;</code></li>
+<li><code>&lt;link&gt;</code></li>
+<li><code>&lt;meta&gt;</code></li>
+<li><code>&lt;param&gt;</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org71ff41a" class="outline-4">
+<h4 id="org71ff41a"><span class="section-number-4">3.4.2</span> Code Validation</h4>
+<div class="outline-text-4" id="text-3-4-2">
+<p>
+No matter how careful we are when writing our code, we will inevitably make mistakes. Thankfully, when writing HTML and CSS we have validators to check our work. The W3C has built both <a href="http://validator.w3.org/">HTML</a> and <a href="http://jigsaw.w3.org/css-validator/">CSS</a> validators that will scan code for mistakes. Validating our code not only helps it render properly across all browsers, but also helps teach us the best practices for writing code.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaedd6d0" class="outline-2">
+<h2 id="orgaedd6d0"><span class="section-number-2">4</span> In Practice</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+As web designers and front-end developers, we have the luxury of attending a number of great conferences dedicated to our craft. We're going to make up our own conference, <b>Styles Conference</b>, and build a website for it throughout the course lessons.
+</p>
+
+<ol class="org-ol">
+<li>Let's open our IDE (text editor), create a new file named <code>index.html</code>, and save it to a location we won’t forget. I’m going to create a folder on my Desktop named “styles- conference” and save this file there; feel free to do the same.</li>
+
+<li><p>
+Within the index.html file, let’s add the document structure, including the &lt;!DOCTYPE html&gt; document type and the &lt;html&gt;, &lt;head&gt;, and &lt;body&gt; elements.
+</p>
+<pre class="example">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></li>
+
+<li><p>
+Inside the &lt;head&gt; element, let’s add &lt;meta&gt; and &lt;title&gt; elements. The &lt;meta&gt; element should include the proper charset attribute and value, while the &lt;title&gt; element should contain the title of the page—let’s say “Styles Conference.”
+</p>
+<pre class="example">
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Styles Conference&lt;/title&gt;
+&lt;/head&gt;
+</pre></li>
+
+<li><p>
+Inside the &lt;body&gt; element, let’s add &lt;h1&gt; and &lt;p&gt; elements. The &lt;h1&gt; element should include the heading we wish to include—let’s use "Styles Conference" again—and the &lt;p&gt; element should include a simple paragraph to introduce our conference.
+</p>
+<pre class="example">
+&lt;body&gt;
+  &lt;h1&gt;Styles Conference&lt;/h1&gt;
+  &lt;p&gt;Every year the brightest web designers and front-end developers descend on Skopje to discuss the latest technologies. Join us this August!&lt;/p&gt;
+&lt;/body
+</pre></li>
+<li>Now it’s time to see how we’ve done! Let’s go find our index.html file. Double-clicking this file or dragging it into a web browser will open it for us to review.</li>
+</ol>
+
+
+<div class="figure">
+<p><img src="./img/fig-1.02.png" alt="fig-1.02.png" />
+</p>
+</div>
+
+
+
+<p>
+Let’s switch gears a bit, moving away from HTML, and take a look at CSS. Remember, HTML will define the content and structure of our web pages, while CSS will define the visual style and appearance of our web pages.
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgb357941" class="outline-2">
+<h2 id="orgb357941"><span class="section-number-2">5</span> Understanding Common CSS Terms</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+In addition to HTML terms, there are a few common CSS terms you will want to familiarize yourself with. These terms include selectors, properties, and values. As with the HTML terminology, the more you work with CSS, the more these terms will become second nature.
+</p>
+</div>
+
+<div id="outline-container-org68806f3" class="outline-3">
+<h3 id="org68806f3"><span class="section-number-3">5.1</span> Selectors</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+As elements are added to a web page, they may be styled using CSS. A <b>selector</b> designates exactly which element or elements within our HTML to target and apply styles (such as color, size, and position) to. Selectors may include a combination of different qualifiers to select unique elements, all depending on how specific we wish to be. For example, we may want to select every paragraph on a page, or we may want to select only one specific paragraph on a page.
+</p>
+
+<p>
+Selectors generally target an attribute value, such as an <code>id</code> or <code>class</code> value, or target the type of element, such as <code>&lt;h1&gt;</code> or <code>&lt;p&gt;</code>.
+</p>
+
+<p>
+Within CSS, selectors are followed with curly brackets, <b>{}</b>, which encompass the styles to be applied to the selected element. The selector here is targeting all <code>&lt;p&gt;</code> elements.
+</p>
+
+<pre class="example">
+p { ... }
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgca3c0ff" class="outline-3">
+<h3 id="orgca3c0ff"><span class="section-number-3">5.2</span> Properties</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Once an element is selected, a property determines the styles that will be applied to that element. Property names fall after a selector, within the curly brackets, {}, and immediately preceding a colon, :. There are numerous properties we can use, such as background, color, font-size, height, and width, and new properties are often added. In the following code, we are defining the color and font-size properties to be applied to all &lt;p&gt; elements.
+</p>
+
+<pre class="example">
+p {
+  color: ...;
+  font-size: ...;
+}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org1c2133d" class="outline-3">
+<h3 id="org1c2133d"><span class="section-number-3">5.3</span> Values</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+So far we’ve selected an element with a selector and determined what style we’d like to apply with a property. Now we can determine the behavior of that property with a value. Values can be identified as the text between the colon, :, and semicolon, ;. Here we are selecting all &lt;p&gt; elements and setting the value of the color property to be orange and the value of the font-size property to be 16 pixels.
+</p>
+
+<pre class="example">
+p {
+  color: orange;
+  font-size: 16px;
+}
+</pre>
+
+<p>
+To review, in CSS our rule set begins with the selector, which is immediately followed by curly brackets. Within these curly brackets are declarations consisting of property and value pairs. Each declaration begins with a property, which is followed by a colon, the property value, and finally a semicolon.
+</p>
+
+<p>
+It is a common practice to indent property and value pairs within the curly brackets. As with HTML, these indentations help keep our code organized and legible.
+</p>
+
+
+<div id="org5a593b8" class="figure">
+<p><img src="./img/fig-1.03_css-syntax-outline.png" alt="fig-1.03_css-syntax-outline.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>CSS syntax outline including a selector, properties, and values</p>
+</div>
+
+
+<p>
+Knowing a few common terms and the general syntax of CSS is a great start, but we have a few more items to learn before jumping in too deep. Specifically, we need to take a closer look at how selectors work within CSS.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org92758c7" class="outline-2">
+<h2 id="org92758c7"><span class="section-number-2">6</span> Working with Selectors</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Selectors, as previously mentioned, indicate which HTML elements are being styled. It is important to fully understand how to use selectors and how they can be leveraged. The first step is to become familiar with the different types of selectors. We’ll start with the most common selectors: <code>type</code>, <code>class</code>, and <code>ID</code> selectors.
+</p>
+</div>
+
+<div id="outline-container-orgdd7b416" class="outline-3">
+<h3 id="orgdd7b416"><span class="section-number-3">6.1</span> Type Selectors</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Type selectors target elements by their element type. For example, should we wish to target all division elements, &lt;div&gt;, we would use a type selector of div. The following code shows a type selector for division elements as well as the corresponding HTML it selects.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #A6E22E;">div </span>{ ... }
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #A6E22E;">div</span>&gt;...&lt;/<span style="color: #A6E22E;">div</span>&gt;
+&lt;<span style="color: #A6E22E;">div</span>&gt;...&lt;/<span style="color: #A6E22E;">div</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgca2ef59" class="outline-3">
+<h3 id="orgca2ef59"><span class="section-number-3">6.2</span> Class Selectors</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Class selectors allow us to select an element based on the element's class attribute value. Class selectors are a little more specific than type selectors, as they select a particular group of elements rather than all elements of one type.
+</p>
+
+<p>
+Class selectors allow us to apply the same styles to different elements at once by using the same class attribute value across multiple elements.
+</p>
+
+<p>
+Within CSS, classes are denoted by a leading period, ., followed by the class attribute value. Here the class selector will select any element containing the class attribute value of awesome, including both division and paragraph elements.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #A6E22E;">.awesome </span>{ ... }
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #A6E22E;">div</span> <span style="color: #FD971F;">class</span>=<span style="color: #E6DB74;">"awesome"</span>&gt;...&lt;/<span style="color: #A6E22E;">div</span>&gt;
+&lt;<span style="color: #A6E22E;">p</span> <span style="color: #FD971F;">class</span>=<span style="color: #E6DB74;">"awesome"</span>&gt;...&lt;/<span style="color: #A6E22E;">p</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcfe09ca" class="outline-3">
+<h3 id="orgcfe09ca"><span class="section-number-3">6.3</span> ID Selectors</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+ID selectors are even more precise than class selectors, as they target only one unique element at a time. Just as class selectors use an element's class attribute value as the selector, ID selectors use an element’s id attribute value as a selector.
+</p>
+
+<p>
+Regardless of which type of element they appear on, id attribute values can only be used once per page. If used they should be reserved for significant elements.
+</p>
+
+<p>
+Within CSS, ID selectors are denoted by a leading hash sign, #, followed by the id attribute value. Here the ID selector will only select the element containing the id attribute value of shayhowe.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #A6E22E;">#FINKI </span>{ ... }
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #A6E22E;">div</span> <span style="color: #FD971F;">id</span>=<span style="color: #E6DB74;">"FINKI"</span>&gt;...&lt;/<span style="color: #A6E22E;">div</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc2ec135" class="outline-3">
+<h3 id="orgc2ec135"><span class="section-number-3">6.4</span> Additional Selectors</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+Selectors are extremely powerful, and the selectors outlined here are the most common selectors we’ll come across. These selectors are also only the beginning. Many more <a href="http://learn.shayhowe.com/advanced-html-css/complex-selectors/">advanced selectors</a> exist and are readily available. When you feel comfortable with these selectors, don't be afraid to look into some of the more advanced selectors.
+</p>
+
+<p>
+All right, everything is starting to come together. We add elements to a page inside our HTML, and we can then select those elements and apply styles to them using CSS. Now let’s connect the dots between our HTML and CSS, and get these two languages working together.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgba2f664" class="outline-2">
+<h2 id="orgba2f664"><span class="section-number-2">7</span> Referencing CSS</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+In order to get our CSS talking to our HTML, we need to reference our CSS file within our HTML. The best practice for referencing our CSS is to include all of our styles in a single external style sheet, which is referenced from within the &lt;head&gt; element of our HTML document. Using a single external style sheet allows us to use the same styles across an entire website and quickly make changes sitewide.
+</p>
+
+<p>
+Other options for referencing CSS include using <b>internal</b> and <b>inline</b> styles. You may come across these options in the wild, but they are generally frowned upon, as they make updating websites cumbersome and unwieldy.
+</p>
+
+<p>
+To create our external CSS style sheet, we’ll want to use our text editor of choice again to create a new plain text file with a <code>.css</code> file extension. Our CSS file should be saved within the same folder, or a subfolder, where our HTML file is located.
+</p>
+
+<p>
+Within the <code>&lt;head&gt;</code> element of the HTML document, the <code>&lt;link&gt;</code> element is used to define the relationship between the HTML file and the CSS file. Because we are linking to CSS, we use the rel attribute with a value of stylesheet to specify their relationship. Furthermore, the <code>href</code> (or hyperlink reference) attribute is used to identify the location, or path, of the CSS file.
+</p>
+
+<p>
+Consider the following example of an HTML document &lt;head&gt; element that references a single external style sheet.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #A6E22E;">head</span>&gt;
+  &lt;<span style="color: #A6E22E;">link</span> <span style="color: #FD971F;">rel</span>=<span style="color: #E6DB74;">"stylesheet"</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"main.css"</span>&gt;
+&lt;/<span style="color: #A6E22E;">head</span>&gt;
+</pre>
+</div>
+<p>
+In order for the CSS to render correctly, the path of the <code>href</code> attribute value must directly correlate to where our CSS file is saved. In the preceding example, the <code>main.css</code> file is stored within the same location as the HTML file, also known as the root directory.
+</p>
+
+<p>
+If our CSS file is within a subdirectory or subfolder, the <code>href</code> attribute value needs to correlate to this path accordingly. For example, if our <code>main.css</code> file were stored within a subdirectory named stylesheets, the <code>href</code> attribute value would be <code>stylesheets/main.css</code>, using a forward slash to indicate moving into a subdirectory.
+</p>
+
+<p>
+At this point our pages are starting to come to life, slowly but surely. We haven't delved into CSS too much, but you may have noticed that some elements have default styles we haven't declared within our CSS. That is the browser imposing its own preferred CSS styles for those elements. Fortunately we can overwrite these styles fairly easily, which is what we'll do next using CSS resets.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3e6e026" class="outline-2">
+<h2 id="org3e6e026"><span class="section-number-2">8</span> Using CSS Resets</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Every web browser has its own default styles for different elements. How Google Chrome renders headings, paragraphs, lists, and so forth may be different from how Internet Explorer does. To ensure cross-browser compatibility, <b>CSS resets</b> have become widely used.
+</p>
+
+<p>
+CSS resets take every common HTML element with a predefined style and provide one unified style for all browsers. These resets generally involve removing any sizing, margins, paddings, or additional styles and toning these values down. Because CSS cascades from top to bottom—more on that soon—our reset needs to be at the very top of our style sheet. Doing so ensures that those styles are read first and that all of the different web browsers are working from a common baseline.
+</p>
+
+<p>
+There are a bunch of different resets available to use, all of which have their own fortes. One of the most popular resets is <a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer’s reset</a>, which has been adapted to include styles for the new HTML5 elements.
+</p>
+
+<p>
+If you are feeling a bit more adventurous, there is also <a href="http://necolas.github.io/normalize.css/">Normalize.css</a>, created by Nicolas Gallagher. Normalize.css focuses not on using a hard reset for all common elements, but instead on setting common styles for these elements. It requires a stronger understanding of CSS, as well as awareness of what you’d like your styles to be.
+</p>
+</div>
+
+<div id="outline-container-org1dfbb11" class="outline-3">
+<h3 id="org1dfbb11"><span class="section-number-3">8.1</span> Cross-Browser Compatibility &amp; Testing</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+As previously mentioned, different browsers render elements in different ways. It's important to recognize the value in cross-browser compatibility and testing. Websites don't need to look exactly the same in every browser, but they should be close. Which browsers you wish to support, and to what degree, is a decision you will need to make based on what is best for your website.
+</p>
+
+<p>
+In all there are a handful of things to be on the lookout for when writing CSS. The good news is that anything is possible, and with a little patience we’ll figure it all out.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgd28de67" class="outline-2">
+<h2 id="orgd28de67"><span class="section-number-2">9</span> In Practice</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Picking back up where we last left off on our conference website, let's see if we can add in a bit of CSS.
+</p>
+
+<ol class="org-ol">
+<li>Inside of our "styles-conference" folder, let's create a new folder named "assets". We’ll store all of the assets for our website, such as our style sheets, images, videos, and so forth, in this folder. For our style sheets, let's go ahead and add another folder named "stylesheets" inside the "assets" folder.</li>
+
+<li>Using our text editor, let's create a new file named <code>main.css</code> and save it within the "stylesheets" folder we just created.</li>
+
+<li><p>
+Looking at our index.html file in a web browser, we can see that the <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> elements each have default CSS styles. Specifically, they each have a unique font size and spacing around them. Using Eric Meyer's reset, we can tone down these styles, allowing each of them to be styled from the same base. To do this let's head over to <a href="http://meyerweb.com/eric/tools/css/reset/">Eric’s website</a>, copy his reset, and paste it at the top of our main.css file.
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #75715E;">/* </span><span style="color: #75715E;">http://meyerweb.com/eric/tools/css/reset/</span>
+<span style="color: #75715E;">   v2.0 | 20110126</span>
+<span style="color: #75715E;">   License: none (public domain)</span>
+<span style="color: #75715E;">*/</span>
+
+<span style="color: #A6E22E;">html, body, div, span, applet, object, iframe,</span>
+<span style="color: #A6E22E;">h1, h2, h3, h4, h5, h6, p, blockquote, pre,</span>
+<span style="color: #A6E22E;">a, abbr, acronym, address, big, cite, code,</span>
+<span style="color: #A6E22E;">del, dfn, em, img, ins, kbd, q, s, samp,</span>
+<span style="color: #A6E22E;">small, strike, strong, sub, sup, tt, var,</span>
+<span style="color: #A6E22E;">b, u, i, center,</span>
+<span style="color: #A6E22E;">dl, dt, dd, ol, ul, li,</span>
+<span style="color: #A6E22E;">fieldset, form, label, legend,</span>
+<span style="color: #A6E22E;">table, caption, tbody, tfoot, thead, tr, th, td,</span>
+<span style="color: #A6E22E;">article, aside, canvas, details, embed,</span>
+<span style="color: #A6E22E;">figure, figcaption, footer, header, hgroup,</span>
+<span style="color: #A6E22E;">menu, nav, output, ruby, section, summary,</span>
+<span style="color: #A6E22E;">time, mark, audio, video </span>{
+  <span style="color: #F92672;">margin</span>: 0;
+  <span style="color: #F92672;">padding</span>: 0;
+  <span style="color: #F92672;">border</span>: 0;
+  <span style="color: #F92672;">font-size</span>: 100%;
+  <span style="color: #F92672;">font</span>: inherit;
+  <span style="color: #F92672;">vertical-align</span>: baseline;
+}
+<span style="color: #75715E;">/* </span><span style="color: #75715E;">HTML5 display-role reset for older browsers </span><span style="color: #75715E;">*/</span>
+<span style="color: #A6E22E;">article, aside, details, figcaption, figure,</span>
+<span style="color: #A6E22E;">footer, header, hgroup, menu, nav, section </span>{
+  <span style="color: #F92672;">display</span>: block;
+}
+<span style="color: #A6E22E;">body </span>{
+  <span style="color: #F92672;">line-height</span>: 1;
+}
+<span style="color: #A6E22E;">ol, ul </span>{
+  <span style="color: #F92672;">list-style</span>: none;
+}
+<span style="color: #A6E22E;">blockquote, q </span>{
+  <span style="color: #F92672;">quotes</span>: none;
+}
+<span style="color: #F92672;">blockquote</span>:before, blockquote:after,
+<span style="color: #A6E22E;">q:before, q:after </span>{
+  <span style="color: #F92672;">content</span>: <span style="color: #E6DB74;">''</span>;
+  <span style="color: #F92672;">content</span>: none;
+}
+<span style="color: #A6E22E;">table </span>{
+  <span style="color: #F92672;">border-collapse</span>: collapse;
+  <span style="color: #F92672;">border-spacing</span>: 0;
+}
+</pre>
+</div></li>
+
+<li>With our main.css file starting to take shape, let’s connect it to our <code>index.html</code> file. Opening the <code>index.html</code> file in our text editor, let’s add the <code>&lt;link&gt;</code> element within our <code>&lt;head&gt;</code> element, just after the <code>&lt;title&gt;</code> element.</li>
+
+<li>Because we'll be referencing a style sheet within the <code>&lt;link&gt;</code> element, let’s add the relation attribute, <code>rel</code>, with a value of stylesheet.</li>
+
+<li><p>
+We also want to include a hyperlink reference, using the <code>href</code> attribute, to our <code>main.css</code> file. Remember, our <code>main.css</code> file is saved within the "stylesheets" folder, which is inside the "assets" folder. Therefore, the <code>href</code> attribute value, which is the path to our <code>main.css</code> file, needs to be <code>assets/stylesheets/main.css</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #A6E22E;">head</span>&gt;
+  &lt;<span style="color: #A6E22E;">meta</span> <span style="color: #FD971F;">charset</span>=<span style="color: #E6DB74;">"utf-8"</span>&gt;
+  &lt;<span style="color: #A6E22E;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Styles Conference</span>&lt;/<span style="color: #A6E22E;">title</span>&gt;
+  &lt;<span style="color: #A6E22E;">link</span> <span style="color: #FD971F;">rel</span>=<span style="color: #E6DB74;">"stylesheet"</span> <span style="color: #FD971F;">href</span>=<span style="color: #E6DB74;">"assets/stylesheets/main.css"</span>&gt;
+&lt;/<span style="color: #A6E22E;">head</span>&gt;
+</pre>
+</div></li>
+</ol>
+
+<p>
+Time to check out our work and see if our HTML and CSS are getting along. Now opening our <code>index.html</code> file (or refreshing the page if it's already opened) within a web browser should show slightly different results than before.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/fig-1.04.png" alt="fig-1.04.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org31ecd70" class="outline-2">
+<h2 id="org31ecd70"><span class="section-number-2">10</span> Summary</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+You now know the basics of HTML and CSS. As we continue and you spend more time writing HTML and CSS, you'll become much more comfortable with the two languages.
+</p>
+
+<p>
+To recap, so far we’ve covered the following:
+</p>
+
+<ul class="org-ul">
+<li>The difference between HTML and CSS</li>
+<li>Getting acquainted with HTML elements, tags, and attributes</li>
+<li>Setting up the structure of your first web page</li>
+<li>Getting acquainted with CSS selectors, properties, and values</li>
+<li>Working with CSS selectors</li>
+<li>Referencing CSS in your HTML</li>
+<li>The value of CSS resets</li>
+</ul>
+
+<p>
+Now let’s take a closer look at HTML and learn a little about semantics.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org13bf60d" class="outline-2">
+<h2 id="org13bf60d"><span class="section-number-2">11</span> References and reading material</h2>
+<div class="outline-text-2" id="text-11">
+<ol class="org-ol">
+<li><a href="http://www.scriptingmaster.com/html/HTML-terms-glossary.asp">Common HTML terms</a> via Scripting Master</li>
+<li><a href="http://meyerweb.com/eric/tools/css/reset/">CSS Tools: Reset CSS</a> via Eric Meyer</li>
+<li><a href="http://www.impressivewebs.com/css-terms-definitions/">CSS Terms &amp; Definitions</a> via Impressive Webs</li>
+<li><a href="http://necolas.github.io/normalize.css/">Normalize.css</a> via Nicolas Gallagher</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Boban Joksimoski</p>
+<p class="date">Created: 2019-03-15 Fri 08:52</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
