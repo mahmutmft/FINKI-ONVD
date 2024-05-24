@@ -47,7 +47,7 @@ header h2 {
 #div-summary p:nth-of-type(2) {
     position: absolute;
     top: 21px;
-    left: 1063px;
+    left: 1219px;
     width: 38px;
     color: white;
 }
@@ -205,7 +205,7 @@ footer a:hover {
 
 }
 
-.navigation ul li {
+#div-most-visited .navigation ul li {
     list-style-image: url("img/bull.png");
 }
 
