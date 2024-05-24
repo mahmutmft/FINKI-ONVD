@@ -1,0 +1,152 @@
+html {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 11px;
+}
+
+.container {
+    margin: auto;
+    background: url("img/cover.png");
+    width: 770px;
+    height: 2000px;
+}
+
+#div-top {
+    background: url("img/cover_top.png") no-repeat;
+    width: 770px;
+    height: 45px;
+}
+
+header {
+    text-indent: -99999px;
+    float: left;
+}
+
+header {
+    background: url("img/game-of-thrones.jpg") no-repeat;
+    width: 268px;
+    height: 71px;
+    margin-top: 45px;
+    margin-left: 71px;
+}
+
+header h2 {
+    background: url("img/ice-and-fire.jpg") no-repeat;
+    width: 299px;
+    height: 22px;
+}
+
+#div-summary {
+    background: url("img/bookmark.jpg") no-repeat top right;
+    width: 300px;
+    height: 131px;
+    float: right;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+#div-summary p:nth-of-type(2) {
+    position: absolute;
+    top: 21px;
+    left: 999px;
+    width: 38px;
+    color: white;
+}
+
+#div-summary p:nth-of-type(2) a {
+    color: white;
+}
+
+#div-summary p:nth-of-type(1) {
+    margin-right: 87px;
+    margin-top: 36px;
+    font-size: 13px;
+}
+
+#div-introduction h3 {
+    text-indent: -9999px;
+    background: url("img/introduction.png");
+    width: 212px;
+    height: 44px;
+    float: left;
+    margin-top: 51px;
+    margin-left: 159px;
+}
+
+#div-introduction p:nth-of-type(1) {
+    float: right;
+    width: 229px;
+    margin-right: 102px;
+}
+
+#div-introduction p:nth-of-type(2) {
+    float: right;
+    width: 236px;
+    margin-right: -236px;
+    padding-left: 249px;
+}
+
+#div-about {
+    background: url("img/img_1.jpg") no-repeat;
+    width: 336px;
+    height: 191px;
+    float: left;
+    margin-top: -70px;
+    margin-left: 31px;
+}
+
+#div-about p:nth-of-type(1) {
+    margin-top: 175px;
+    text-align: right;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+#div-about p:nth-of-type(2) {
+    text-align: right;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+#div-about h3 {
+    text-indent: -9999px;
+}
+
+#div-people {
+    background: url("img/about.png") no-repeat;
+    width: 336px;
+    height: 191px;
+    float: right;
+    margin-top: 11px;
+    margin-right: 25px;
+}
+
+#div-people h3 {
+    text-indent: -9999px;
+    background: url("img/img_2.jpg") no-repeat;
+    width: 336px;
+    height: 191px;
+    margin-top: 36px;
+}
+
+#div-people p {
+    font-size: 15px;
+    font-style: italic;
+    margin-right: 20px;
+}
+
+#div-people2 {
+    position: absolute;
+    width: 305px;
+    top: 848px;
+    left: 733px;
+}
+#div-people2 p{
+    font-size: 15px;
+    font-style: italic;
+}
+footer{
+    float: right;
+    width: 333px;
+    height: 213px;
+    margin-top: 100px;
+}
