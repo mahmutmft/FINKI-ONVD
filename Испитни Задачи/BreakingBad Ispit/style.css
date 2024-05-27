@@ -6,6 +6,7 @@
     background: url("./img/top.png") no-repeat;
     width: 1000px;
     height: 400px;
+    margin: auto;
 }
 
 #fcse-summary {

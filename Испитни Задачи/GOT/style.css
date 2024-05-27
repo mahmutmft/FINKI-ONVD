@@ -259,3 +259,6 @@ footer a:hover {
     margin-top: -68px;
     position: absolute;
 }
+body{
+    background: url("img/");
+}
