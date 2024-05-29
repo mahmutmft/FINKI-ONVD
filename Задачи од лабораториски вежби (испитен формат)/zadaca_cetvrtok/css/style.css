@@ -75,7 +75,7 @@ section#home.parallax-section {
     width: 100px;
     height: 100px;
 }
-#work.parallax-section .container .row:{
+#work.parallax-section .container .row{
     width: 20%;
     text-align: center;
     display: inline-block;
