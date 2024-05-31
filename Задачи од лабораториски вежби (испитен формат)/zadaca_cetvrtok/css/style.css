@@ -105,6 +105,10 @@ body > div:nth-child(1) {
 }
 
 #contact.parallax-section {
+    background-color: whitesmoke;
+}
+
+#contact.parallax-section .container {
     width: 60%;
     margin: auto;
     padding-top: 100px;
@@ -114,4 +118,74 @@ body > div:nth-child(1) {
 textarea {
     width: 1094px;
     height: 200px;
+    border: 0 solid white;
+}
+
+#contact.parallax-section .col-md-6 {
+    display: inline-block;
+}
+
+#contact.parallax-section .col-md-6 input.form-control {
+    width: 512px;
+    padding: 15px;
+    margin: 20px 0;
+    border: 0 solid white;
+}
+
+#contact .col-md-offset-3 #submit {
+    width: 500px;
+    padding: 10px;
+    margin-left: 300px;
+    margin-top: 30px;
+    background: orange;
+    color: white;
+    border-radius: 10px;
+
+}
+
+#contact .col-md-offset-3 #submit:hover {
+    background: #ff8c00;
+    color: whitesmoke;
+}
+
+#footer {
+    background: black;
+}
+
+#footer div.container {
+    color: whitesmoke;
+    background: black;
+    width: 60%;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#footer .row {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid grey;
+}
+
+#footer div.col-md-4 {
+    width: 30%;
+    margin-bottom: 50px;
+}
+
+#footer h4 {
+    color: white;
+}
+
+#footer p {
+    color: grey;
+}
+
+.support-cus a {
+    text-decoration: none;
+    color: white;
+}
+
+#footer form button {
+    padding: 20px 100px;
+    border-radius: 30px;
 }
